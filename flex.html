@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <style>
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .filter-form {
+        display: flex;
+      }
+      input {
+        height: 30px;
+        padding-left: 12px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+      }
+      .filter-item {
+        margin-right: 10px;
+      }
+      .btn {
+        padding-left: 14px;
+        background: #ffbd00;
+      }
+      button {
+        border: none;
+        height: 34px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="filter-info">
+      <div class="title">数据筛选</div>
+
+      <div class="filter-form">
+        <div class="filter-item">
+          <span>机构：</span>
+          <input type="text" />
+        </div>
+
+        <div class="filter-item">
+          <span>操作人：</span>
+          <input type="text" />
+        </div>
+
+        <div class="filter-item filter-btn">
+          <button class="btn">搜索</button>
+          <button>重置</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
