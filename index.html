@@ -5,9 +5,52 @@
     <title>前端入门</title>
 
     <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      html,
+      body,
       .container {
-        width: 700px;
-        margin: auto;
+        width: 100%;
+        height: 100%;
+      }
+      .container-top {
+        padding: 20px 0px;
+        border-bottom: 8px solid #dcdcdc;
+        display: flex;
+      }
+      .top-left,
+      .top-centre,
+      .top-right {
+        width: 33%;
+        text-align: center;
+      }
+      .top-left {
+        font-size: 25px;
+      }
+      .top-centre {
+        font-size: 20px;
+      }
+      .container-botton {
+        height: 100%;
+        display: flex;
+      }
+      .content-left {
+        width: 20%;
+        border-right: 14px solid #dcdcdc;
+      }
+      .content-right {
+        padding-left: 20px;
+        padding-top: 10px;
+        width: 80%;
+      }
+      .left-content {
+        padding: 20px 0px;
+        padding-left: 10px;
+      }
+      .left-content-centre {
+        background: #ffcc66;
       }
       .title {
         font-size: 24px;
@@ -26,10 +69,6 @@
       }
       .filter-item {
         margin-right: 10px;
-      }
-      .filter-btn {
-        flex: 1;
-        text-align: right;
       }
       .btn {
         padding-left: 14px;
@@ -64,71 +103,87 @@
 
   <body>
     <div class="container">
-      <div class="filter-info">
-        <div class="title"><b>数据筛选</b></div>
-
-        <div class="filter-form">
-          <div class="filter-item">
-            <span>机构：</span>
-            <input type="text" value="111" />
-          </div>
-
-          <div class="filter-item">
-            <span>操作人：</span>
-            <input type="text" />
-          </div>
-
-          <div class="filter-item filter-btn">
-            <button class="btn">搜索</button>
-            <button>重置</button>
-          </div>
-        </div>
+      <div class="container-top">
+        <div class="top-left">系统演示</div>
+        <div class="top-centre">供应链</div>
+        <div class="top-right">子系统3</div>
       </div>
 
-      <div class="table-info">
-        <div class="title"><b>数据表格</b></div>
-
-        <div class="filter-item">
-          <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-              <tr>
-                <th>序号</th>
-                <th>编码</th>
-                <th>机构</th>
-                <th>操作人</th>
-                <th>操作时间</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>P001</td>
-                <td>西南配送中心</td>
-                <td>机器人001</td>
-                <td>2022/3/14 14:22</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>P002</td>
-                <td>西南配送中心</td>
-                <td>机器人002</td>
-                <td>2022/3/14 14:22</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>P003</td>
-                <td>西南配送中心</td>
-                <td>机器人003</td>
-                <td>2022/3/14 14:22</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="container-botton">
+        <div class="content-left">
+          <div class="left-content"><b>侧边栏</b></div>
+          <div class="left-content left-content-centre">财务管理</div>
+          <div class="left-content">数据管理</div>
         </div>
-      </div>
 
-      <div class="pagination">
-        <button class="btn-one">1</button>
-        <button>2</button>
+        <div class="content-right">
+          <div class="filter-info">
+            <div class="title">数据筛选</div>
+
+            <div class="filter-form">
+              <div class="filter-item">
+                <span>机构：</span>
+                <input type="text" value="111" />
+              </div>
+
+              <div class="filter-item">
+                <span>操作人：</span>
+                <input type="text" />
+              </div>
+
+              <div class="filter-item filter-btn">
+                <button class="btn">搜索</button>
+                <button>重置</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-info">
+            <div class="title">数据表格</div>
+
+            <div class="filter-item">
+              <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>编码</th>
+                    <th>机构</th>
+                    <th>操作人</th>
+                    <th>操作时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>P001</td>
+                    <td>西南配送中心</td>
+                    <td>机器人001</td>
+                    <td>2022/3/14 14:22</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>P002</td>
+                    <td>西南配送中心</td>
+                    <td>机器人002</td>
+                    <td>2022/3/14 14:22</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>P003</td>
+                    <td>西南配送中心</td>
+                    <td>机器人003</td>
+                    <td>2022/3/14 14:22</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <button class="btn-one">1</button>
+            <button>2</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
