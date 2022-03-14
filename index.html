@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>前端入门</title>
   </head>
 
   <body>
-    <h1>前端入门</h1>
+    <div class="filter-info">
+      <div class="title"><b>数据筛选</b></div>
+
+      <div class="filter-form">
+        <div class="filter-item" style="display: inline">
+          <span>机构：</span>
+          <input type="text" style="display: inline" />
+        </div>
+
+        <div class="filter-item" style="display: inline">
+          <span>操作人：</span>
+          <input type="text" />
+        </div>
+
+        <div class="filter-item" style="display: inline">
+          <input type="button" value="搜索" />
+          <input type="button" value="重置" />
+        </div>
+      </div>
+    </div>
+
+    <div class="table-info">
+      <br />
+      <div class="title"><b>数据表格</b></div>
+
+      <div class="filter-item">
+        <table
+          border="1"
+          cellpadding="10"
+          cellspacing="0"
+          style="text-align: center"
+        >
+          <thead bgcolor="yellow">
+            <tr>
+              <th>序号</th>
+              <th>编码</th>
+              <th>机构</th>
+              <th>操作人</th>
+              <th>操作时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>P001</td>
+              <td>西南配送中心</td>
+              <td>机器人001</td>
+              <td>2022/3/14 14:22</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>P002</td>
+              <td>西南配送中心</td>
+              <td>机器人002</td>
+              <td>2022/3/14 14:22</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>P003</td>
+              <td>西南配送中心</td>
+              <td>机器人003</td>
+              <td>2022/3/14 14:22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <input type="button" value="1" />
+      <input type="button" value="2" />
+    </div>
   </body>
 </html>
