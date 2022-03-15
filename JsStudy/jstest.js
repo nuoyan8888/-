@@ -45,14 +45,13 @@ arr.forEach((item, index) => {
 
 //4、对数组arr的每一项id加1，返回一个新数组
 let newArry = arr.map((item, index) => {
-  return item.id + 1;
+  item.id = item.id + 1;
+  return item;
 });
 console.log(newArry);
 
-//5、选取数组arr的第0项和第一项组成一个新数组newArr，并且添加
-let newArr = arr.filter((item, index) => {
-  return index === 0 || index === 1;
-});
+//5、选取数组arr的第0项和第一项组成一个新数组newArr，并且添加一条数据
+let newArr = arr.slice(0, 2);
 newArr.push({
   id: 4,
   code: 'PS004',
@@ -61,3 +60,18 @@ newArr.push({
   operateTime: '2020/09/08 16:32',
 });
 console.log(newArr);
+
+class Test{
+  constructor(num){
+    this.num = num;    
+  }
+  add(num){
+    this.num += num
+  }
+  log(){
+    console.log(this.num)
+  }
+}
+const t = new Test(1);
+t.add(2);
+t.log();
