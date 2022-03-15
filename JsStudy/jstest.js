@@ -20,7 +20,7 @@ const arr = [
     org: '华北配送中心',
     operator: '操作人003',
     operateTime: '2020/09/08 16:32',
-  },
+  }
 ];
 
 //1、id >= 2 的项
@@ -113,3 +113,5 @@ for (i = 0; i < arr.length; i++) {
   table = table + '<td>' + arr[i].operateTime + '</td></tr>';
 }
 tbody.innerHTML = table;
+
+
