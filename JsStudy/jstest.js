@@ -103,18 +103,13 @@ function testFn(num) {
 }
 testFn(5);
 
-const thead = document.querySelector('thead');
-thead.innerHTML = '<tr><th>序号</th>';
-thead.innerHTML = thead.innerHTML + '<th>编码</th>';
-thead.innerHTML = thead.innerHTML + '<th>机构</th>';
-thead.innerHTML = thead.innerHTML + '<th>操作人</th>';
-thead.innerHTML = thead.innerHTML + '<th>操作时间</th></tr>';
+const tbody = document.querySelector('tbody');
+let table = '';
 for (i = 0; i < arr.length; i++) {
-  const tbody = document.querySelector('tbody');
-  tbody.innerHTML = tbody.innerHTML + '<tr><td>' + arr[i].id + '</td>';
-  tbody.innerHTML = tbody.innerHTML + '<td>' + arr[i].code + '</td>';
-  tbody.innerHTML = tbody.innerHTML + '<td>' + arr[i].org + '</td>';
-  tbody.innerHTML = tbody.innerHTML + '<td>' + arr[i].operator + '</td>';
-  tbody.innerHTML =
-    tbody.innerHTML + '<td>' + arr[i].operateTime + '</td></tr>';
+  table = table + '<tr><td>' + arr[i].id + '</td>';
+  table = table + '<td>' + arr[i].code + '</td>';
+  table = table + '<td>' + arr[i].org + '</td>';
+  table = table + '<td>' + arr[i].operator + '</td>';
+  table = table + '<td>' + arr[i].operateTime + '</td></tr>';
 }
+tbody.innerHTML = table;
