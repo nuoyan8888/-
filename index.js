@@ -4,6 +4,8 @@ let state = {
 };
 //数据生成
 const arr = [];
+//临时数组
+let temarr = [];
 function testFn(num) {
   for (i = 1; i <= num; i++) {
     if (i <= 2) {
@@ -50,22 +52,23 @@ function readerData(data) {
 }
 
 //搜索事件
-const search = document.querySelector('.btnSearch');
-search.addEventListener('click', handleSearch);
-
 function handleSearch() {
   const orgInput = document.querySelector('.text-jg');
   const operatorInput = document.querySelector('.text-czr');
   state.org = orgInput.value;
   state.operator = operatorInput.value;
-  let newarr = arr.filter((item) => {
+  temarr = arr.filter((item) => {
     return (
       item.org.indexOf(orgInput.value) > -1 &&
       item.operator.indexOf(operatorInput.value) > -1
     );
   });
-  readerData(newarr);
+  readerData(temarr);
 }
+
+//绑定搜索事件
+const search = document.querySelector('.btnSearch');
+search.addEventListener('click', handleSearch);
 
 // 分页
 let num = document.querySelectorAll('.pagination button');
