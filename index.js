@@ -1,25 +1,9 @@
-// const search = document.querySelector('.btnSearch');
-// search.addEventListener('click', function () {
-//   console.log(document.querySelector('.text-jg').value);
-//   console.log(document.querySelector('.text-czr').value);
-// });
-
-// const reset = document.querySelector('.btnReset');
-// function resets(){
-//   document.querySelector('.text-jg').value = null;
-//   document.querySelector('.text-czr').value = null;
-// }
-// reset.addEventListener('click', resets);
-
-// let num = document.querySelectorAll('.pagination button');
-// num.forEach((item) => {
-//   item.addEventListener('click', function (e) {
-//     console.log(e.target.innerHTML);
-//   });
-// });
-
-//添加数据
-let arr = [];
+let state = {
+  org: '',
+  operator: '',
+};
+//数据生成
+const arr = [];
 function testFn(num) {
   for (i = 1; i <= num; i++) {
     if (i <= 2) {
@@ -42,44 +26,52 @@ function testFn(num) {
   }
   console.log(arr);
 }
+//数据生成条数
 testFn(15);
 
-const tbody = document.querySelector('tbody');
-let table = '';
-// for (i = 0; i < arr.length; i++) {
-//   table = table + '<tr><td>' + arr[i].id + '</td>';
-//   table = table + '<td>' + arr[i].code + '</td>';
-//   table = table + '<td>' + arr[i].org + '</td>';
-//   table = table + '<td>' + arr[i].operator + '</td>';
-//   table = table + '<td>' + arr[i].operateTime + '</td></tr>';
-// }
-// tbody.innerHTML = table;
+//数据录入
+function readerData(data) {
+  const tbody = document.querySelector('tbody');
+  let table = '';
+  for (i = 0; i < data.length; i++) {
+    table = table + '<tr><td>' + data[i].id + '</td>';
+    table = table + '<td>' + data[i].code + '</td>';
+    table = table + '<td>' + data[i].org + '</td>';
+    table = table + '<td>' + data[i].operator + '</td>';
+    table = table + '<td>' + data[i].operateTime + '</td></tr>';
+  }
+  tbody.innerHTML = table;
+}
+
+//搜索事件
+const search = document.querySelector('.btnSearch');
+search.addEventListener('click', handleSearch);
+
+function handleSearch() {
+  const orgInput = document.querySelector('.text-jg');
+  const operatorInput = document.querySelector('.text-czr');
+  state.org = orgInput.value;
+  state.operator = operatorInput.value;
+  let newarr = arr.filter((item) => {
+    return item.org.indexOf(org) > -1 && item.operator.indexOf(operator) > -1;
+  });
+  console.log(newarr);
+  readerData(newarr);
+}
 
 // 分页
 let num = document.querySelectorAll('.pagination button');
 num.forEach((item) => {
   item.addEventListener('click', function (e) {
-    console.log(e.target.innerHTML);
-    if (e.target.innerHTML == 1) {
-      let table = '';
-      for (i = 0; i < 10; i++) {
-        table = table + '<tr><td>' + arr[i].id + '</td>';
-        table = table + '<td>' + arr[i].code + '</td>';
-        table = table + '<td>' + arr[i].org + '</td>';l
-        table = table + '<td>' + arr[i].operator + '</td>';
-        table = table + '<td>' + arr[i].operateTime + '</td></tr>';
-      }
-      tbody.innerHTML = table;
-    } else if (e.target.innerHTML == 2) {
-      let table = '';
-      for (i = 10; i < 15; i++) {
-        table = table + '<tr><td>' + arr[i].id + '</td>';
-        table = table + '<td>' + arr[i].code + '</td>';
-        table = table + '<td>' + arr[i].org + '</td>';
-        table = table + '<td>' + arr[i].operator + '</td>';
-        table = table + '<td>' + arr[i].operateTime + '</td></tr>';
-      }
-      tbody.innerHTML = table;
+    if (e.target.innerHTML * 10 < arr.length) {
+      let newarr = arr.slice(
+        (e.target.innerHTML - 1) * 10,
+        e.target.innerHTML * 10
+      );
+      readerData(newarr);
+    } else {
+      let newarr = arr.slice((e.target.innerHTML - 1) * 10, arr.length);
+      readerData(newarr);
     }
   });
 });
