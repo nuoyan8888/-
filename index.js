@@ -29,6 +29,12 @@ function testFn(num) {
 //数据生成条数
 testFn(15);
 
+//数据初始化
+function main() {
+  let newarr = arr.slice(0, 10);
+  readerData(newarr);
+}
+
 //数据录入
 function readerData(data) {
   const tbody = document.querySelector('tbody');
@@ -53,9 +59,11 @@ function handleSearch() {
   state.org = orgInput.value;
   state.operator = operatorInput.value;
   let newarr = arr.filter((item) => {
-    return item.org.indexOf(org) > -1 && item.operator.indexOf(operator) > -1;
+    return (
+      item.org.indexOf(orgInput.value) > -1 &&
+      item.operator.indexOf(operatorInput.value) > -1
+    );
   });
-  console.log(newarr);
   readerData(newarr);
 }
 
@@ -75,3 +83,5 @@ num.forEach((item) => {
     }
   });
 });
+
+main();
