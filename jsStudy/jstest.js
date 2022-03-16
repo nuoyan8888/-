@@ -78,6 +78,8 @@ t.add(2);
 t.log();
 */
 
+/*
+//打印表格
 let arr = [];
 function testFn(num) {
   for (i = 1; i <= num; i++) {
@@ -113,5 +115,5 @@ for (i = 0; i < arr.length; i++) {
   table = table + '<td>' + arr[i].operateTime + '</td></tr>';
 }
 tbody.innerHTML = table;
-
+*/
 
